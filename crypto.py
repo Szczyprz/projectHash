@@ -4,7 +4,6 @@ import argparse
 import os
 import sys
 import math
-import os.path
 
 parser = argparse.ArgumentParser(description='Process some integers.')
 

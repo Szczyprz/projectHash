@@ -7,20 +7,19 @@ import math
 
 parser = argparse.ArgumentParser(description='Process some integers.')
 
-<<<<<<< HEAD
-parser.add_argument('hashlen', metavar='N', type=int, nargs=1, help='Length of a hash function output in bits.\
-                                                                                     Valid values: 64, 96, 128')
-parser.add_argument('--input', default='0', help='File to be hashed. If no argument is provided data to be hashed is \
-                                                                                    taken from the standard input.')
-parser.add_argument('--output', default='0', help='File, where hash ouput will be saved. If no argument is provided \
-                                                                                    digest is  written on standard output.')
-=======
-parser.add_argument('hashlen', metavar='N', type=int, nargs=1, help='Length of a hash function output in bits. Valid values: 64, 128, 256')
+parser.add_argument('hashlen', metavar='N', type=int, help='Length of a hash function output in bits. Valid values: 64, 128, 256')
 parser.add_argument('--input', default='0', help='File to be hashed. If no argument is provided data to be hashed is taken from the standard input.')
 parser.add_argument('--output', default='0', help='File, where hash ouput will be saved. If no argument is provided digest is  written on standard output.')
->>>>>>> 8dd124860a9d96a4f70010318eb4b33e730a5ba9
 
 args = parser.parse_args()
+
+
+if args.hashlen not in [64, 128, 256]:
+    print args.hashlen, " is not valid number for hash length"
+    print "try 64, 128 or 256"
+    sys.exit(1) 
+
+
 print('Length of a hash: {}'.format(args.hashlen))
 print(args.input)
 print(args.output)

@@ -78,7 +78,7 @@ def hash_p(data,k):
     print k
 
 
-    print "output"
+    #print "output"
 
     ascii=[]
     data_binary = bytearray(data)
